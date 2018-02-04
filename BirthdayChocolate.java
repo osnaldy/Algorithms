@@ -11,20 +11,28 @@ public class BirthdayChocolate {
     static int solve(int n, int[] s, int d, int m){
 
         int count = 0;
+        int numberTotal = 0;
 
-        for (int i = 0; i < (s.length - m) + 1; i++){
+        for (int i = 0; i < n; i++){
 
-            if (s.length == m && s[0] == d){
+            try {
 
-                count++;
-                System.out.println("Hello");
+                for (int j = 0; j < m; j++){
+
+                    numberTotal += s[i+j];
+                }
+            }
+
+            catch (Exception e){
                 break;
             }
 
-            else if ((s[i] + s[i+1]) == d){
+            if (numberTotal == d){
 
                 count++;
             }
+
+            numberTotal = 0;
         }
 
         return count;

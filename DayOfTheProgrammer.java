@@ -79,5 +79,4 @@ public class DayOfTheProgrammer {
         String result = solve(year);
         System.out.println(result);
     }
-
 }
